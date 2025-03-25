@@ -1,0 +1,17 @@
+Obligatory school project.
+
+Teknologier/Sprog:
+  HTML
+  Bootstrap
+  AJAX
+  JSON
+  JavaScript
+  C# eller PHP
+
+Versionsstyringsværktøj:
+  Repos, GitHub, eller Bitbucket.
+Opgavebeskrivelse:
+  Du skal bruge Dog API'en https://dog.ceo/dog-api/ til at opbygge en webapplikation, hvor data hentes fra API'en, vises og kan filtreres.
+  Krav til funktionalitet:
+  Brugeren skal kunne vælge enhver hunderace og se de tilgængelige billeder af den valgte race.
+  Webapplikationen skal bruge et responsivt design for at sikre, at den fungerer godt på både desktop og mobile enheder.
