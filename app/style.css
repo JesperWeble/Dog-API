@@ -1,0 +1,16 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+#breedMenu
+{
+    display: block;
+}
+#imageContainer
+{
+    display: inline;
+    max-width: 25vw;
+    max-height: 25vh;
+}
+img
+{
+    max-width: inherit;
+    max-height: inherit;
+}
