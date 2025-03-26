@@ -1,4 +1,8 @@
-/*@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';*/
+body
+{
+    margin: 5px !important;
+}
+
 #breedMenu
 {
     display: block;
@@ -6,11 +10,17 @@
 #imageContainer
 {
     display: inline;
-    max-width: 25vw;
-    max-height: 25vh;
+    max-width: 30vw;
+    max-height: 30vh;
 }
 img
 {
     max-width: inherit;
     max-height: inherit;
+}
+.Scrollbar
+{
+    height: 95vh;
+    width: 90vw;
+    overflow: auto;
 }

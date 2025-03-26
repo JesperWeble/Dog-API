@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', async function()
 {
     const breedMenu = document.getElementById("breedMenu")
-    console.log(breedMenu);
     response = await fetch('https://dog.ceo/api/breeds/list/all')
     data = await response.json();
     breeds = data.message;
@@ -33,12 +32,10 @@ document.addEventListener('DOMContentLoaded', async function()
         const imageContainer = document.getElementById("imageContainer");
         imageContainer.innerHTML = ''
         const selectedBreed = this.value;
-        console.log(selectedBreed);
         if (selectedBreed != "")
         {
             response = await fetch(`https://dog.ceo/api/breed/${selectedBreed}/images`)
             data = await response.json();
-            console.log(data);
             images = data.message;
             Object.values(images).forEach(image => {
                 newImage = document.createElement("img");
