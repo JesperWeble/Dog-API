@@ -7,20 +7,38 @@ body
 {
     display: block;
 }
-#imageContainer
+
+/*.slideshow
+{
+    display: block;
+    height: 95vh;
+    width: 90vw;
+}*/
+
+#slideshow_btns
+{
+    display: block;
+}
+#imageCounter
 {
     display: inline;
-    max-width: 30vw;
-    max-height: 30vh;
 }
+
+/*#imageContainer 
+{
+    display: inline;
+    max-height: 95vh;
+    max-width: 90vw;
+}*/
 img
 {
     max-width: inherit;
     max-height: inherit;
 }
-.Scrollbar
+
+/*.Scrollbar
 {
     height: 95vh;
     width: 90vw;
     overflow: auto;
-}
+}*/

@@ -1,7 +1,9 @@
+var i = 0; // currently shown image. Default 0;
 
 document.addEventListener('DOMContentLoaded', async function()
 {
-    const breedMenu = document.getElementById("breedMenu")
+    
+    const breedMenu = document.getElementById("breedMenu") // the dropdown menu to select dog breed.
     response = await fetch('https://dog.ceo/api/breeds/list/all')
     data = await response.json();
     breeds = data.message;
@@ -29,20 +31,54 @@ document.addEventListener('DOMContentLoaded', async function()
     });
     
     document.getElementById("breedMenu").addEventListener("change", async function(){
-        const imageContainer = document.getElementById("imageContainer");
-        imageContainer.innerHTML = ''
-        const selectedBreed = this.value;
+        selectedBreed = this.value;
+        console.log(selectedBreed);
         if (selectedBreed != "")
         {
             response = await fetch(`https://dog.ceo/api/breed/${selectedBreed}/images`)
+            console.log(response);
             data = await response.json();
+            console.log(data);
             images = data.message;
-            Object.values(images).forEach(image => {
-                newImage = document.createElement("img");
-                newImage.src = image;
-                imageContainer.appendChild(newImage);
-            });
+            image.src = images[0];
+            i = 0;
+            updateImageCounter();
+
+
+            //Object.values(images).forEach(image => {
+            //    newImage = document.createElement("img");
+            //    newImage.src = image;
+            //    imageContainer.appendChild(newImage);
+                
+            //});
 
         }
     });
 });
+
+// Change the currently displayed image.
+function nextImage(Amount)
+{
+    const image = document.getElementById("image"); // The image element
+    i += Amount;
+    
+    if (i > images.length - 1) // If going up while looking at the LAST image, show the FIRST image instead.
+    {
+        i = 0;
+    }
+
+    else if (i < 0) // If going down while looking at the FIRST image, show the LAST image instead.
+    {
+        i = images.length - 1;
+    }
+
+    console.log(i);
+    image.src = images[i]
+    updateImageCounter();
+}
+
+function updateImageCounter()
+{
+    const imageCounter = document.getElementById("imageCounter"); // The number that shows how many images are available for the currently selected breed.
+    imageCounter.textContent = `${i + 1}/${images.length}`;
+}
