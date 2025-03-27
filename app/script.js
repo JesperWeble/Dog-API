@@ -44,14 +44,6 @@ document.addEventListener('DOMContentLoaded', async function()
             i = 0;
             updateImageCounter();
 
-
-            //Object.values(images).forEach(image => {
-            //    newImage = document.createElement("img");
-            //    newImage.src = image;
-            //    imageContainer.appendChild(newImage);
-                
-            //});
-
         }
     });
 });

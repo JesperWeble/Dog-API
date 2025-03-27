@@ -14,14 +14,19 @@
         <option value="">Select a breed</option>
     </select>
     <dív class="slideshow">
-        <div id="slideshow_btns">
-            <button class="btn btn-outline-secondary d-inline-flex align-items-center" onclick="nextImage(-1)"><</button>
-            <p id="imageCounter">0/0</p>
-            <button class="btn btn-outline-secondary d-inline-flex align-items-center" onclick="nextImage(1)">></button>
-        </div>
+        
         <form id="imageContainer">
-            <img id="image"/>
+            <div id="slideshow_btns">
+                <button type="button" class="btn btn-outline-secondary d-inline-flex align-items-center" onclick="nextImage(-1)"><</button>
+                <button type="button" class="btn btn-outline-secondary d-inline-flex align-items-center" onclick="nextImage(1)">></button>
+            </div>
+            <img id="image" />
         </form>
+
+        <div class="bottombar">
+            <p id="imageCounter">0/0</p>
+
+        </div>
 
     </dív>
 </body>
