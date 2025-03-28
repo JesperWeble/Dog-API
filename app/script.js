@@ -32,13 +32,10 @@ document.addEventListener('DOMContentLoaded', async function()
     
     document.getElementById("breedMenu").addEventListener("change", async function(){
         selectedBreed = this.value;
-        console.log(selectedBreed);
         if (selectedBreed != "")
         {
             response = await fetch(`https://dog.ceo/api/breed/${selectedBreed}/images`)
-            console.log(response);
             data = await response.json();
-            console.log(data);
             images = data.message;
             image.src = images[0];
             i = 0;
@@ -47,6 +44,9 @@ document.addEventListener('DOMContentLoaded', async function()
         }
     });
 });
+
+window.addEventListener('load', responsiveDesign);
+window.addEventListener('resize', responsiveDesign);
 
 // Change the currently displayed image.
 function nextImage(Amount)
@@ -64,7 +64,6 @@ function nextImage(Amount)
         i = images.length - 1;
     }
 
-    console.log(i);
     image.src = images[i]
     updateImageCounter();
 }

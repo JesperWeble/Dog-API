@@ -1,3 +1,49 @@
 @media only screen and (max-width: 800px)
 {
+    html, body
+    {
+        touch-action: manipulation;
+
+    }
+    #slideshow_btns button
+    {
+        font-size: 30px;
+    }
+
+    #imageContainer 
+    {
+        height: 50vh;
+    }
+    .slideshow
+    {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        height: 100vh;
+
+    }
+    .bottombar
+    {
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: flex-start;
+        position: relative;
+        z-index: 1;
+    }
+
+    #breedMenu
+    {
+    }
+}
+
+@media only screen and (max-height: 500px) {
+    html, body {
+        touch-action: manipulation;
+    }
+
+    #slideshow_btns button {
+        font-size: 60px;
+    }
+
 }
