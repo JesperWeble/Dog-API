@@ -14,7 +14,7 @@
     {
         height: 50vh;
     }
-    .slideshow
+    #slideshow
     {
         display: flex;
         flex-direction: column;
@@ -23,7 +23,7 @@
         height: 100vh;
 
     }
-    .bottombar
+    #bottombar
     {
         flex-direction: column;
         flex-grow: 1;

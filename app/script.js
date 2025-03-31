@@ -43,10 +43,35 @@ document.addEventListener('DOMContentLoaded', async function()
 
         }
     });
+
+    window.addEventListener('load', responsiveDesign);
+    window.addEventListener('resize', responsiveDesign);
+    
 });
 
-window.addEventListener('load', responsiveDesign);
-window.addEventListener('resize', responsiveDesign);
+
+function responsiveDesign(e)
+{
+    console.log(e)
+    var breedMenu = document.getElementById('breedMenu');
+    var bottombar = document.getElementById('bottombar');
+    var screensize = window.innerWidth;
+    if (screensize <= 768)
+    {
+        if (!bottombar.contains(breedMenu))
+        {
+            bottombar.appendChild(breedMenu);
+        }
+    }
+    else
+    {
+        var body = document.body;
+        if (bottombar.contains(breedMenu))
+        {
+            body.appendChild(breedMenu);
+        }
+    }
+}
 
 // Change the currently displayed image.
 function nextImage(Amount)
