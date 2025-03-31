@@ -1,5 +1,6 @@
 var i = 0; // currently shown image. Default 0;
-
+var test = 0;
+window.addEventListener('load', responsiveDesign);
 document.addEventListener('DOMContentLoaded', async function()
 {
     
@@ -44,34 +45,35 @@ document.addEventListener('DOMContentLoaded', async function()
         }
     });
 
-    window.addEventListener('load', responsiveDesign);
+    
     window.addEventListener('resize', responsiveDesign);
     
 });
 
-
-function responsiveDesign(e)
+function responsiveDesign()
 {
-    console.log(e)
+    test++
+    console.log("Work? " + test)
     var breedMenu = document.getElementById('breedMenu');
     var bottombar = document.getElementById('bottombar');
+    var body = document.body;
     var screensize = window.innerWidth;
     if (screensize <= 768)
     {
         if (!bottombar.contains(breedMenu))
         {
-            bottombar.appendChild(breedMenu);
+            bottombar.prepend(breedMenu);
         }
     }
     else
     {
-        var body = document.body;
         if (bottombar.contains(breedMenu))
         {
-            body.appendChild(breedMenu);
+            body.prepend(breedMenu);
         }
     }
-}
+
+};
 
 // Change the currently displayed image.
 function nextImage(Amount)
