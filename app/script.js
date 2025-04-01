@@ -1,5 +1,4 @@
 var i = 0; // currently shown image. Default 0;
-var test = 0;
 window.addEventListener('load', responsiveDesign);
 document.addEventListener('DOMContentLoaded', async function()
 {
@@ -39,6 +38,7 @@ document.addEventListener('DOMContentLoaded', async function()
             data = await response.json();
             images = data.message;
             image.src = images[0];
+            imgCount = images.length - 1
             i = 0;
             updateImageCounter();
 
@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', async function()
 
     
     window.addEventListener('resize', responsiveDesign);
+    document.getElementById("imageCounter").addEventListener("change", counterInput);
     
 });
 
-function responsiveDesign()
+// Changes the placement of the Breed selector drop down menu at a certain screen size
+function responsiveDesign() 
 {
-    test++
-    console.log("Work? " + test)
     var breedMenu = document.getElementById('breedMenu');
     var bottombar = document.getElementById('bottombar');
     var body = document.body;
@@ -80,15 +80,15 @@ function nextImage(Amount)
 {
     const image = document.getElementById("image"); // The image element
     i += Amount;
-    
-    if (i > images.length - 1) // If going up while looking at the LAST image, show the FIRST image instead.
+
+    if (i > imgCount) // If going up while looking at the LAST image, show the FIRST image instead.
     {
         i = 0;
     }
 
     else if (i < 0) // If going down while looking at the FIRST image, show the LAST image instead.
     {
-        i = images.length - 1;
+        i = imgCount;
     }
 
     image.src = images[i]
